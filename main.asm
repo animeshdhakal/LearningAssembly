@@ -14,16 +14,20 @@ section .data
 section .text
     global _start
 
-_start:
-
+write_to_stdout:
     ; Writing to stdout
     mov rax, 0x01
     mov rdi, 0x01
     mov rsi, message
     mov rdx, 13
     syscall
-    
+
+exit_syscall:
     ; Exiting Syscall
     mov rax, 0x3c
     mov rdi, 0
     syscall
+
+_start:
+    call write_to_stdout
+    call exit_syscall
