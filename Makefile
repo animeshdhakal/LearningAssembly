@@ -1,5 +1,5 @@
 all: main.o
-	ld -o main main.o
+	ld -m elf_i386 -o main main.o
 
 main.o: main.asm
-	nasm -felf64 main.asm -o main.o
+	nasm -felf32 main.asm -o main.o
