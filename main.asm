@@ -13,6 +13,7 @@ _start:
 func:
     push ebp ; Save the base pointer
     mov ebp, esp ; Set the base pointer to the stack pointer
+    sub esp, 4 ; Allocate 4 bytes on the stack
     
     ; This is called function prologue
     mov ebx, 10
